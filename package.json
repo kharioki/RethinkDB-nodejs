@@ -1,0 +1,23 @@
+{
+  "name": "rethinkdb-nodejs",
+  "version": "1.0.0",
+  "description": "using rethinkdb with nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kharioki/RethinkDB-nodejs.git"
+  },
+  "keywords": [
+    "rethinkDB",
+    "nodejs"
+  ],
+  "author": "kharioki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kharioki/RethinkDB-nodejs/issues"
+  },
+  "homepage": "https://github.com/kharioki/RethinkDB-nodejs#readme"
+}
