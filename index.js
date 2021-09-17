@@ -9,7 +9,9 @@ r.connect({
   if (err) throw err;
 
   // create a new table
-  createTable(conn, 'users');
+  // createTable(conn, 'users');
+  // add some users
+  addUsers(conn);
 });
 
 function createTable(conn, tableName) {
@@ -17,4 +19,17 @@ function createTable(conn, tableName) {
     if (err) throw err;
     console.log(JSON.stringify(result, null, 2));
   })
+}
+
+function addUsers(conn) {
+  const users = [
+    { name: 'Tony Stark', city: 'Westlands', age: 30 },
+    { name: 'Tessie Swift', city: 'Ruaka', age: 28 },
+    { name: 'Ken Steve', city: 'Nakuru', age: 30 },
+    { name: 'Stella Phil', city: 'Westlands', age: 31 }
+  ];
+
+  r.table('users')
+    .insert(users)
+    .run(conn, (err, result) => console.log(JSON.stringify(result, null, 2)));
 }
