@@ -11,7 +11,9 @@ r.connect({
   // create a new table
   // createTable(conn, 'users');
   // add some users
-  addUsers(conn);
+  // addUsers(conn);
+  // get all users
+  getUsers(conn);
 });
 
 function createTable(conn, tableName) {
@@ -32,4 +34,11 @@ function addUsers(conn) {
   r.table('users')
     .insert(users)
     .run(conn, (err, result) => console.log(JSON.stringify(result, null, 2)));
+}
+
+function getUsers(conn) {
+  r.table('users')
+    .run(conn, (err, cursor) => {
+      cursor.toArray((err, result) => console.log(JSON.stringify(result, null, 2)))
+    });
 }
